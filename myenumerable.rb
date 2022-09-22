@@ -1,6 +1,11 @@
 module MyEnumerable
-  def all
-
+  def all?
+    # @list.each do |el|
+    #   puts yield el
+    # end
+    each do |el|
+      puts yield el
+    end
   end
 
   def any
