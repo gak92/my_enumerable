@@ -28,3 +28,8 @@ puts list.any? {|e| e == 2}
 puts "Check e == 5"
 puts list.any? {|e| e == 5}
 
+puts "Check e is even?"
+result = list.filter {|e| e.even?}
+print result
+# => [2, 4]
+

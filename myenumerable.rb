@@ -33,7 +33,13 @@ module MyEnumerable
   end
 
   def filter
-
+    myArray = []
+    each do |el|
+      if yield el
+        myArray.push(el)
+      end
+    end
+    return myArray
   end
 
   def display
