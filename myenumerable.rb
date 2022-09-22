@@ -1,37 +1,27 @@
 module MyEnumerable
   def all?
-   
     result = true
     each do |el|
       # result = yield el ? true : false
-      if !yield el
-        result = false
-      end
+      result = false unless yield el
     end
-    return result
-
-    
+    result
   end
 
   def any?
     result = false
     each do |el|
-      if yield el
-        result = true
-      end
+      result = true if yield el
     end
-    return result
-
+    result
   end
 
   def filter
-    myArray = []
+    my_array = []
     each do |el|
-      if yield el
-        myArray.push(el)
-      end
+      my_array.push(el) if yield el
     end
-    return myArray
+    my_array
   end
 
   def display
