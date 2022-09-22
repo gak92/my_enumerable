@@ -21,7 +21,14 @@ module MyEnumerable
     
   end
 
-  def any
+  def any?
+    result = false
+    each do |el|
+      if yield el
+        result = true
+      end
+    end
+    return result
 
   end
 
